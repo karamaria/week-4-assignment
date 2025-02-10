@@ -2,12 +2,12 @@
 const form = document.getElementById('guestbook-form');
 const messagesContainer = document.getElementById('messages-container');
 
-const API_URL = "http://localhost:5678";
+const API_URL = "http://localhost:3000";
 
 // function to fetch messages
 async function fetchMessages() {
   try {
-    const response = await fetch('http://localhost:3000/messages'); // send request to the server
+    const response = await fetch(`${API_URL}/messages`); // send request to the server
     if (response.ok) {
       const messages = await response.json();
       messages.forEach(displayMessage); // display each message
