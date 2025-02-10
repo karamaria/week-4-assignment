@@ -18,6 +18,10 @@ const db = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the Guestbook!');
+});
+
 // GET route to fetch messages
 app.get('/messages', async (req, res) => {
   try {
