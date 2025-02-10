@@ -37,7 +37,7 @@ form.addEventListener('submit', async (event) => {
   const message = document.getElementById('message').value;
 
   try {
-    const response = await fetch('http://localhost:3000/messages', {
+    const response = await fetch(`${API_URL}/messages`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ form.addEventListener('submit', async (event) => {
     if (response.ok) {
       const newMessage = await response.json();
       displayMessage(newMessage);
-    }
+    } 
   } catch (error) {
     console.error('Error posting message:', error);
   }
