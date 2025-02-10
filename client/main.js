@@ -2,13 +2,12 @@
 const form = document.getElementById('guestbook-form');
 const messagesContainer = document.getElementById('messages-container');
 
-// Set API URL to Render server
-const API_URL = "https://week-4-assignment-1.onrender.com";
+const API_URL = 'http://localhost:3000';
 
 // function to fetch messages
 async function fetchMessages() {
   try {
-    const response = await fetch(`${API_URL}/messages`); // send request to the server
+    const response = await fetch(`${API_URL}/messages`); 
     if (response.ok) {
       const messages = await response.json();
       messages.forEach(displayMessage); // display each message
