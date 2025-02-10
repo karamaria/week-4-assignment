@@ -2,7 +2,8 @@
 const form = document.getElementById('guestbook-form');
 const messagesContainer = document.getElementById('messages-container');
 
-const API_URL = "http://localhost:3000";
+// Set API URL to Render server
+const API_URL = "https://week-4-assignment-1.onrender.com";
 
 // function to fetch messages
 async function fetchMessages() {
