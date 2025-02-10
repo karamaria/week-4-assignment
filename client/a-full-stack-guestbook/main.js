@@ -40,7 +40,7 @@ form.addEventListener('submit', async (event) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ name, message }), // send data to the server?
+      body: JSON.stringify({ name, message }), // send data to the server
     });
 
     if (response.ok) {
