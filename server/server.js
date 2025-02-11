@@ -4,12 +4,10 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import pg from 'pg';
 
-dotenv.config(); // environment variables
-
-// configure the application
 const app = express();
 app.use(cors());
 app.use(express.json());
+dotenv.config();
 
 console.log(process.env.DATABASE_URL);
 
@@ -19,7 +17,7 @@ const db = new pg.Pool({
 });
 
 app.get('/', (req, res) => {
-  res.send('Welcome to the Guestbook!');
+  res.send('welcome to the guestbook!');
 });
 
 // GET route to fetch messages
@@ -49,7 +47,7 @@ app.post('/messages', async (req, res) => {
 });
 
 // start the server on the port
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`App running on ${process.env.PORT || 3000}`);
 });

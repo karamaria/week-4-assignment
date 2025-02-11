@@ -2,7 +2,7 @@
 const form = document.getElementById('guestbook-form');
 const messagesContainer = document.getElementById('messages-container');
 
-const API_URL = 'http://localhost:3000';
+const API_URL = 'http://172.18.192.1:3000';
 
 // function to fetch messages
 async function fetchMessages() {
