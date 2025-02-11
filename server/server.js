@@ -17,13 +17,13 @@ const db = new pg.Pool({
 });
 
 app.get('/', (req, res) => {
-  res.send('welcome to the guestbook!');
+  res.json('welcome to the guestbook!');
 });
 
 // GET route to fetch messages
 app.get('/messages', async (req, res) => {
   try {
-    const result = await db.query('SELECT * FROM messages ORDER BY created_at DESC');
+    const result = await db.query('SELECT * FROM messages');
     res.json(result.rows);
   } catch (error) {
     console.error('Error fetching messages:', error);
